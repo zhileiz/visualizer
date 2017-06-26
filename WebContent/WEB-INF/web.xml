@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>visualize</display-name>
+<!-- log4j 配置  开始 -->  
+	<context-param>  
+	    <param-name>log4jConfigLocation</param-name>  
+	<param-value>/WEB-INF/classes/log4j.properties</param-value>  
+	</context-param>  
+	<context-param>  
+	    <param-name>log4jRefreshInterval</param-name>  
+	    <param-value>600000</param-value>  
+	</context-param>  
+    <listener>
+  		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+ 	</listener>
+
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>com.shunicom.tools.CharacterFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	   <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	
+    <servlet>
+        <description>
+        </description>
+        <display-name>ServicesServlet</display-name>
+        <servlet-name>ServicesServlet</servlet-name>
+        <servlet-class>com.shunicom.servlet.ServicesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <description>
+        </description>
+        <display-name>PeoplePicServlet</display-name>
+        <servlet-name>PeoplePicServlet</servlet-name>
+        <servlet-class>com.shunicom.servlet.PeoplePicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServicesServlet</servlet-name>
+        <url-pattern>/services/heatmap</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PeoplePicServlet</servlet-name>
+        <url-pattern>/services/peoplePic</url-pattern>
+    </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
