@@ -41,13 +41,35 @@
         <servlet-name>PeoplePicServlet</servlet-name>
         <servlet-class>com.shunicom.servlet.PeoplePicServlet</servlet-class>
     </servlet>
+        <servlet>
+        <description>
+        </description>
+        <display-name>MapGridServlet</display-name>
+        <servlet-name>MapGridServlet</servlet-name>
+        <servlet-class>com.shunicom.servlet.MapGridServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <description>
+        </description>
+        <display-name>PeopleCountServlet</display-name>
+        <servlet-name>PeopleCountServlet</servlet-name>
+        <servlet-class>com.shunicom.servlet.PeopleCountServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicesServlet</servlet-name>
         <url-pattern>/services/heatmap</url-pattern>
     </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>MapGridServlet</servlet-name>
+        <url-pattern>/services/mapGrid</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PeoplePicServlet</servlet-name>
         <url-pattern>/services/peoplePic</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PeopleCountServlet</servlet-name>
+        <url-pattern>/services/count</url-pattern>
     </servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

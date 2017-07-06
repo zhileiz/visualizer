@@ -1,0 +1,33 @@
+html{
+    height:107%;
+    overflow:hidden;
+    background-color:black;
+}
+      
+body{
+    min-height:100%;
+    overflow:hidden;
+    font-family:"微软雅黑";
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    background-color:black;
+}
+
+#container{
+    height:100%;
+    width:100%;
+}
+
+.info-overlay{
+    height:120px;
+    width:120px;
+    z-index:2;
+    margin:1% 2%;
+    margin-left:20px;
+    border-radius:50%;
+    border: 3px solid #B1C3EB;
+    color:#B1C3EB;
+    text-align:center;
+    position:absolute;
+}
